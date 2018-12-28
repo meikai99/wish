@@ -1,0 +1,659 @@
+{template '../../../addons/zofui_chickenwish/template/web/common/myheader'}
+
+	{if $_GPC['op'] == 'set'}
+
+		<form method="post" >
+			<div class="frm_control_group">
+				<label for="" class="frm_label"></label>
+				<div class="frm_controls">
+				</div>
+			</div>
+
+			<div class="frm_control_group" >
+	  			<label for="" class="frm_label">奖品功能</label>
+	   			<div class="frm_controls">
+	    			<label class="frm_radio_label hide_item" hideitem=".isprize">
+	    				<i class="icon_radio"></i>
+	    				<span class="lbl_content">关闭</span>
+	    				<input type="radio" name="isprize" value="0" class="frm_radio" {if $prizerule['isprize'] == 0}checked="checked"{/if} />
+	    			</label>
+	    			<label class="frm_radio_label show_item" showitem=".isprize">
+	    				<i class="icon_radio"></i>
+	    				<span class="lbl_content">开启</span>
+	    				<input type="radio" name="isprize" value="1" class="frm_radio" {if $prizerule['isprize'] == 1}checked="checked"{/if} />
+	    			</label>
+	   			</div>
+	  		</div>
+
+	  		<div class="isprize hideitem" {if $prizerule['isprize'] == 1}style="display:block"{/if}>
+				<div class="frm_control_group" >
+		  			<label for="" class="frm_label">领奖方式</label>
+		   			<div class="frm_controls">
+		    			<label class="frm_radio_label hide_item" hideitem=".taketype1,.taketype2">
+		    				<i class="icon_radio"></i>
+		    				<span class="lbl_content">快递发奖</span>
+		    				<input type="radio" name="taketype" value="0" class="frm_radio" {if $prizerule['taketype'] == 0}checked="checked"{/if} />
+		    			</label>
+		    			<label class="frm_radio_label  show_item hide_item" hideitem=".taketype2" showitem=".taketype1">
+		    				<i class="icon_radio"></i>
+		    				<span class="lbl_content">上店自提</span>
+		    				<input type="radio" name="taketype" value="1" class="frm_radio" {if $prizerule['taketype'] == 1}checked="checked"{/if} />
+		    			</label>
+		    			<label class="frm_radio_label  show_item hide_item" hideitem=".taketype1" showitem=".taketype2">
+		    				<i class="icon_radio"></i>
+		    				<span class="lbl_content">联系客服</span>
+		    				<input type="radio" name="taketype" value="2" class="frm_radio" {if $prizerule['taketype'] == 2}checked="checked"{/if} />
+		    			</label>	    			
+		   			</div>
+		  		</div>
+				<div class="frm_control_group taketype1 hideitem" {if $prizerule['taketype'] == 1}style="display:block"{/if}>
+					<label for="" class="frm_label">自提提示</label>
+					<div class="frm_controls msg">
+						<span class="frm_textarea_box textarea_60px">
+							<textarea  name="takeinfo" class="frm_textarea" rows="6" placeholder="">{$prizerule['takeinfo']}</textarea>
+						</span>
+						<p class="frm_tips">提示上店自提的内容,例：领奖地址：广东省深圳市南山路111号。联系电话：13111112222</p>
+					</div>
+				</div>
+				<div class="taketype2 hideitem" {if $prizerule['taketype'] == 2}style="display:block"{/if}>
+					<div class="frm_control_group single_img_upload">
+						<label for="" class="frm_label">客服二维码</label>
+						<div class="frm_controls">
+							{php echo  WebCommon::tpl_form_field_image('kefuqr',$prizerule['kefuqr'])}
+						</div>
+					</div>
+				</div>
+	  			
+				<div class="frm_control_group" >
+		  			<label for="" class="frm_label">获奖方式</label>
+		   			<div class="frm_controls">
+		    			<label class="frm_radio_label show_item hide_item" showitem=".getedtype1" hideitem=".getedtype2">
+		    				<i class="icon_radio"></i>
+		    				<span class="lbl_content">点赞值达到某点即获奖</span>
+		    				<input type="radio" name="getedtype" value="0" class="frm_radio" {if $prizerule['getedtype'] == 0}checked="checked"{/if} />
+		    			</label>
+		    			<!-- <label class="frm_radio_label show_item hide_item" showitem=".getedtype1" hideitem=".getedtype2">
+		    				<i class="icon_radio"></i>
+		    				<span class="lbl_content">点赞值达到某点后抽奖</span>
+		    				<input type="radio" name="getedtype" value="1" class="frm_radio" {if $prizerule['getedtype'] == 1}checked="checked"{/if} />
+		    			</label> -->		    			
+		    			<label class="frm_radio_label hide_item show_item" showitem=".getedtype2" hideitem=".getedtype1">
+		    				<i class="icon_radio"></i>
+		    				<span class="lbl_content">活动结束后按排名获奖</span>
+		    				<input type="radio" name="getedtype" value="2" class="frm_radio" {if $prizerule['getedtype'] == 2}checked="checked"{/if} />
+		    			</label>
+		    			<p class="frm_tips font_ff5f27">这个参数一经设置，不要修改</p>
+		    			<p class="frm_tips">若选择第一个，点赞值满足条件后可选择任意一款奖品兑换。若选择第二个，需要写明活动奖品和活动获奖规则。选择第一个后需要在奖品管理内添加奖品</p>
+		   			</div>
+		  		</div>
+				<div class="frm_control_group getedtype1" {if $prizerule['getedtype'] == 2 }style="display:none"{/if}>
+					<label for="" class="frm_label">获奖的点赞值</label>
+					<div class="frm_controls">
+						<span class="frm_input_box">
+							<input type="text" class="frm_input"  name="getedvalue" value="{$prizerule['getedvalue']}">
+						</span>
+						<p class="frm_tips">点赞值达到此点即可获奖，可在奖品列表中选择奖品兑换奖品</p>
+					</div>
+				</div>
+				<div class="getedtype2 hideitem" {if $prizerule['getedtype'] == 2}style="display:block"{/if}>
+					
+					<div class="frm_control_group">
+						<label for="" class="frm_label">可获奖的名次</label>
+						<div class="frm_controls">
+							<span class="frm_input_box">
+								<input type="text" class="frm_input"  name="getmem" value="{$prizerule['getmem']}">
+							</span>
+							<p class="frm_tips">设置总共可以获奖的人数，例如：规定一等奖10名，二等奖20名，三等奖20名。那么总共50名，设置50,前50名可以在前端领奖。你可根据名次按等级发奖</p>
+						</div>
+					</div>
+
+					<div class="frm_control_group textarea_item">
+						<label for="" class="frm_label">获奖规则</label>
+						<div class="frm_controls">
+							{php echo tpl_ueditor('rule', htmlspecialchars_decode($prizerule['rule']));}
+							<p class="">例：一等奖1-5名,苹果7一台。二等奖6-20名，ipad5一台。三等奖21-50名，小米手机一台。</p>
+						</div>
+
+					</div>
+
+				</div>
+				
+				
+	  		</div>
+			<div class="tool_bar">
+				<input type="submit" name="setrule" class="btn btn_primary" value="确定" id="js_createprize">
+				<input name="token" type="hidden" value="{$_W['token']}" />
+			</div>
+		</form>
+
+	{elseif $_GPC['op'] == 'add' || $_GPC['op'] == 'edit'}
+
+
+
+		<form method="post" >
+			<div class="frm_control_group">
+				<label for="" class="frm_label"></label>
+				<div class="frm_controls">
+				</div>
+			</div>
+			<div class="frm_control_group">
+				<label for="" class="frm_label">奖品名称</label>
+				<div class="frm_controls msg">
+					<span class="frm_input_box">
+						<input type="text" class="frm_input"   name="name" value="{$prize['name']}">
+					</span>
+				</div>
+			</div>
+			<div class="frm_control_group" id="js_prize_type"> 
+	  			<label for="" class="frm_label">奖品类型</label> 
+	   			<div class="frm_controls">
+	    			<label class="frm_radio_label hide_item" hideitem=".type,.moneyvalue">
+	    				<i class="icon_radio"></i>
+	    				<span class="lbl_content">未中奖</span>
+	    				<input type="radio" name="type" value="0" class="frm_radio" {if $prize['type'] == 0}checked="checked"{/if} /> 
+	    			</label>
+	    			<label class="frm_radio_label show_item hide_item" showitem=".type,.moneyvalue" hideitem=".tourl"> 
+	    				<i class="icon_radio"></i> 
+	    				<span class="lbl_content">余额奖励</span>
+	    				<input type="radio" name="type" value="1" class="frm_radio"  {if $prize['type'] == 1}checked="checked"{/if} /> 
+	    			</label>
+	    			<label class="frm_radio_label show_item hide_item" showitem=".type,.tourl" hideitem=".moneyvalue">
+	    				<i class="icon_radio"></i>
+	    				<span class="lbl_content">跳转链接</span>
+	    				<input type="radio" name="type" value="2" class="frm_radio" {if $prize['type'] == 2}checked="checked"{/if} />
+	    			</label>
+	    			<label class="frm_radio_label show_item hide_item" showitem=".type" hideitem=".moneyvalue,.tourl">
+	    				<i class="icon_radio"></i>
+	    				<span class="lbl_content">其他奖品</span>
+	    				<input type="radio" name="type" value="3" class="frm_radio" {if $prize['type'] == 3}checked="checked"{/if} />
+	    			</label>
+	    			<p class="frm_tips">跳转链接商品是抽到后，跳转到指定的链接，此类奖品一般是理财等产品的注册赠送金额奖品、跳转优惠券链接等奖品。其他奖品是设置在线核销或线下核销的实物或虚拟物品奖品，若设置其他奖品，请在参数设置内设置好自提店铺参数</p>
+	   			</div>
+	  		</div>
+			<div class="frm_control_group">
+				<label for="" class="frm_label">中奖概率数字</label>
+				<div class="frm_controls msg">
+					<span class="frm_input_box">
+						<input type="text" class="frm_input"   name="chance" value="{$prize['chance']}">
+					</span>
+					<p class="frm_tips">填正整数，每次抽奖必定能抽到一个奖品，概率数字越大抽到的概率越大。</p>
+					<a href="javascript:;" id="get_prize_moni">模拟抽奖</a>
+				</div>
+			</div>
+			<div class="hideitem type" {if $prize['type'] != 0 }style="display:block"{/if}>
+				<div class="frm_control_group">
+					<label for="" class="frm_label">奖品库存</label>
+					<div class="frm_controls msg">
+						<span class="frm_input_box">
+							<input type="text" class="frm_input"   name="stock" value="{$prize['stock']}">
+						</span>
+						<p class="frm_tips">每被抽中一次减少1</p>
+					</div>
+				</div>
+
+		  		<div class="hideitem moneyvalue" {if $prize['type'] == 1 }style="display:block"{/if}>
+					<div class="frm_control_group">
+						<label for="" class="frm_label">余额数值</label>
+						<div class="frm_controls msg">
+							<span class="frm_input_box">
+								<input type="text" class="frm_input"   name="money" value="{$prize['money']}">
+							</span>
+						</div>
+					</div>
+		  		</div>
+
+		  		<div class="hideitem tourl" {if $prize['type'] == 2 }style="display:block"{/if} >
+					<div class="frm_control_group">
+						<label for="" class="frm_label">跳转链接</label>
+						<div class="frm_controls msg">
+							<span class="frm_input_box">
+								<input type="text" class="frm_input"   name="url" value="{$prize['url']}">
+							</span>
+						</div>
+					</div>
+		  		</div>
+				<div class="frm_control_group single_img_upload">
+					<label for="" class="frm_label">奖品图片</label>
+					<div class="frm_controls">
+						{php echo  WebCommon::tpl_form_field_image('img',$prize['img'])}
+						<p class="frm_tips">图片尺寸 100X130(像素)</p>
+					</div>
+				</div>
+
+				<div class="frm_control_group">
+					<label for="" class="frm_label">最多抽中次数</label>
+					<div class="frm_controls msg">
+						<span class="frm_input_box">
+							<input type="text" class="frm_input"   name="maxtimes" value="{$prize['maxtimes']}">
+						</span>
+						<p class="frm_tips">限制每个人最多抽中此奖品的次数，填0即永远抽不到，填负数不做限制</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="frm_control_group" >
+	  			<label for="" class="frm_label">奖品状态</label>
+	   			<div class="frm_controls">
+	    			<label class="frm_radio_label" for="checkbox1">
+	    				<i class="icon_radio"></i>
+	    				<span class="lbl_content">立即上线</span>
+	    				<input type="radio" name="status" value="0" class="frm_radio" id="checkbox1" {if $prize['status'] == 0}checked="checked"{/if} />
+	    			</label>
+	    			<label class="frm_radio_label " for="checkbox2">
+	    				<i class="icon_radio"></i>
+	    				<span class="lbl_content">暂不上线</span>
+	    				<input type="radio" name="status" value="1" class="frm_radio" id="checkbox2" {if $prize['status'] == 1}checked="checked"{/if} /> 
+	    			</label> 
+	   			</div>
+	  		</div>
+			<div class="tool_bar">
+				<input type="submit" name="create" class="btn btn_primary" value="确定" id="js_createprize">
+				<input name="token" type="hidden" value="{$_W['token']}" />
+			</div>
+		</form>
+	{elseif $_GPC['op'] == 'list'}
+
+<div class="tr fr">
+	<a href="javascript:;" class="add_form_btn topbar_jsbtn" js="addprize">添加奖品</a>
+</div>
+{if !empty( $list )}
+  <table class="table" cellspacing="0"> 
+   <thead class="thead"> 
+    	<tr> 
+     		<th class="table_cell title td_col_1"> 
+     			<label class="frm_checkbox_label" for="selectAll"> 
+     				<i class="icon_checkbox"></i> 
+     				<span class="lbl_content">id</span> 
+     				<input type="checkbox" class="frm_checkbox" id="selectAll" /> 
+     			</label>
+     		</th> 
+     		<th class="table_cell tl td_col_2">名称</th>
+     		<th class="table_cell tl td_col_1">类型</th>	
+      		<th class="table_cell tl td_col_1">库存</th>	
+     		<th class="table_cell tr td_col_1">操作</th>
+    	</tr> 
+   </thead> 
+   <tbody class="tbody" id="js_goods">
+   <form method="post">
+	   {loop $list $item}
+	    	<tr> 
+	     		<td class="table_cell title"> 
+	      			<div class="goods_info">
+	      			 	<label class="frm_checkbox_label" > 
+	       					<i class="icon_checkbox"></i> 
+	       					<input type="checkbox" name="checkall[]" class="frm_checkbox" value="{$item['id']}" /> 
+	       					{$item['id']}
+	       				</label>
+	      			</div>
+	     		</td>
+	     		<td class="table_cell price tl">
+	    			{$item['name']}
+	     		</td>
+	     		<td class="table_cell price tl">
+	    			{if $item['type'] == 0}
+	    				红包
+	    				<p>{$item['money']}元</p>
+	    			{elseif $item['type'] == 1}
+	    				其他
+	    			{/if}
+	     		</td>	     		   		
+	     		<td class="table_cell price tl">
+	    			{$item['stock']}
+	     		</td>
+			    <td class="table_cell oper last_child tr opclass" style="position: relative;">
+			    	<a  href="javascript:;" class="edit_listitem" id="{$item['id']}">编辑</a>
+			    	<a href="{php echo $this->createWebUrl('prize',array('op'=>'deleteprize','id'=>$item['id']))}" onclick="return confirm('删除不能恢复，确定要删除吗？');">删除</a>
+			    </td>
+	    	</tr>
+	    {/loop}
+   	</tbody>
+  	</table>
+	<div class="bottom_page item_cell_box">
+		<div class="dib tl">
+     			<label class="frm_checkbox_label" for="selectAll"> 
+     				<i class="icon_checkbox"></i> 
+     				<span class="lbl_content">全选</span> 
+     				<input type="checkbox" class="frm_checkbox" id="selectAll" /> 
+     			</label>
+  			<div class="filter_content dropdown_topbar"> 
+		   		<div class="dropdown_menu ">
+		    		<a href="javascript:;" class="btn dropdown_switch jsDropdownBt">
+		    			<label class="jsBtLabel">批量操作</label>
+		    			<i class="arrow"></i>
+		    		</a> 
+		    		<div class="dropdown_data_container jsDropdownList" > 
+			     		<ul class="dropdown_data_list"> 
+			      			<li class="dropdown_data_item "> 
+			      				<input name="deleteallprize" class="alldeal_btn" value="删除所选" onclick="return confirm('确定要删除选择的吗？');" type="submit">
+			      			</li>			      			
+			    		</ul> 
+		    		</div> 
+		   		</div>
+  			</div>
+		</div>
+		<div class="tr dib item_cell_flex">
+			{$pager}
+		</div>
+	</div>
+		<input name="token" type="hidden" value="{$_W['token']}" />
+	</form>
+{else}
+	<div class="no_data">没有找到数据</div>
+{/if}
+
+<div class="my_model" addprize style="display: none;position: relative;z-index: 111">
+    <div class=" ui-draggable " >
+        <div class="dialog">
+            <div class="dialog_hd">
+                <a href="javascript:;" class="icon16_opr closed pop_closed model_close" >关闭</a>
+            </div>
+            <div class="dialog_bd info_box" >
+                <form>
+
+				<div class="frm_control_group">
+					<label for="" class="frm_label">奖品名称</label>
+					<div class="frm_controls msg">
+						<span class="frm_input_box">
+							<input type="text" class="frm_input"   name="name" value="{$prize['name']}">
+						</span>
+					</div>
+				</div>
+				<div class="frm_control_group" id="js_prize_type"> 
+		  			<label for="" class="frm_label">奖品类型</label> 
+		   			<div class="frm_controls">
+		    			<label class="frm_radio_label show_item" showitem=".moneyvalue" >
+		    				<i class="icon_radio"></i>
+		    				<span class="lbl_content">现金红包</span>
+		    				<input type="radio" name="type" value="0" class="frm_radio" {if $prize['type'] == 0}checked="checked"{/if} />
+		    			</label>
+		    			<label class="frm_radio_label hide_item" hideitem=".moneyvalue">
+		    				<i class="icon_radio"></i>
+		    				<span class="lbl_content">其他奖品</span>
+		    				<input type="radio" name="type" value="1" class="frm_radio" {if $prize['type'] == 1}checked="checked"{/if} />
+		    			</label>
+		   			</div>
+		  		</div>
+
+				<div class="frm_control_group">
+					<label for="" class="frm_label">奖品库存</label>
+					<div class="frm_controls msg">
+						<span class="frm_input_box">
+							<input type="text" class="frm_input" name="stock" value="{$prize['stock']}">
+						</span>
+						<p class="frm_tips frm_tips_default">每领取一次减少一个</p>
+					</div>
+				</div>
+
+		  		<div class="moneyvalue" >
+					<div class="frm_control_group">
+						<label for="" class="frm_label">红包数值</label>
+						<div class="frm_controls msg">
+							<span class="frm_input_box">
+								<input type="text" class="frm_input" name="money" value="{$prize['money']}">
+							</span>
+						</div>
+					</div>
+		  		</div>
+
+				<div class="frm_control_group single_img_upload">
+					<label for="" class="frm_label">奖品图片</label>
+					<div class="frm_controls">
+						{php echo  WebCommon::tpl_form_field_image('img',$prize['img'])}
+						<p class="frm_tips frm_tips_default">图片尺寸 200X200(像素)</p>
+					</div>
+				</div>
+
+                </form>
+            </div>
+            <div class="dialog_ft">
+                <span class="btn btn_primary btn_input js_btn_p" id="confirm_addform" >
+                    <button type="button" class="js_btn">保存</button>
+                </span>
+                <span class="btn btn_default btn_input js_btn_p model_close" >
+                    <button type="button" class="js_btn">取消</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="mask ui-draggable" style="display: block;"></div>
+</div>
+
+
+<script type="text/javascript">
+	$(function(){
+
+		var fid = 0;
+		$('.edit_listitem').click(function(){
+			var nowfid = $(this).attr('id');
+			Http('post','json','findprize',{fid:nowfid},function(data){
+				if(data.status == 200){
+					fid = nowfid; // 防止取消后再添加异常
+					$('input[name=name]').val(data.obj.name);
+					$('input[name=stock]').val(data.obj.stock);
+					$('input[name=money]').val(data.obj.money);
+					if( data.obj.img ) {
+						$('input[name=img]').val(data.obj.img);
+						$('.img-thumbnail').attr('src',data.obj.showimg).parent().show();
+					}else{
+						$('input[name=img]').val('');
+						$('.img-thumbnail').attr('src','').parent().hide();
+					}
+
+					if( data.obj.type == 0 ) {
+						$('.moneyvalue').show();
+					}else{
+						$('.moneyvalue').hide();
+					}
+
+					var act = $('input[name="type"][value="'+data.obj.type+'"]');
+					act.prop('checked',true).parents('.frm_controls').find('.frm_radio_label').removeClass('selected');
+					act.parent().addClass('selected');				
+
+					$('.my_model[addprize]').show();
+
+				}else{
+					webAlert(data.res);
+				}
+			},true);
+		});
+		
+		$('#confirm_addform').click(function(){
+
+			var postdata = {
+				fid : fid,
+				name : $('input[name=name]').val(),
+				type : $('input[name=type]:checked').val(),
+				money : $('input[name=money]').val(),
+				stock : $('input[name=stock]').val(),
+				img : $('input[name=img]').val(),
+			};
+
+			if( postdata.name == '' || postdata.stock == '' || postdata.img == '' ){
+				webAlert('请填写完整数据');return false;
+			}
+			
+
+			Http('post','json','addprize',postdata,function(data){
+				if(data.status == 200){
+					webAlert(data.res);
+					setTimeout(function(){
+						location.href = '';
+					},500);
+				}else{
+					webAlert(data.res);
+				}
+			},true);
+
+		});
+		$('.topbar_jsbtn').click(function(){
+			fid = 0;
+		});
+
+
+	});
+</script>
+
+	{elseif $_GPC['op'] == 'geted'}
+		{template '../../../addons/'.MODULE.'/template/web/common/topbar'}
+		<div class="extra_info icon_after fr ml10">
+			<a href="{php echo WebCommon::logUrl('down',1)}" >下载兑奖记录</a>
+		</div>
+{if !empty( $list )}
+  <table class="table" cellspacing="0"> 
+   <thead class="thead"> 
+    	<tr> 
+     		<th class="table_cell title td_col_1"> 
+     			<label class="frm_checkbox_label" for="selectAll"> 
+     				<i class="icon_checkbox"></i> 
+     				<span class="lbl_content">id</span> 
+     				<input type="checkbox" class="frm_checkbox" id="selectAll" /> 
+     			</label>
+     		</th> 
+     		<th class="table_cell tl td_col_1">领取者</th>
+     		<th class="table_cell tl td_col_1">奖品名称</th>
+     		<th class="table_cell tl td_col_1">兑奖编码</th>
+      		<th class="table_cell tl td_col_1">领取状态</th>
+     		<th class="table_cell tr td_col_1">操作</th>
+    	</tr> 
+   </thead> 
+   <tbody class="tbody" id="js_goods">
+   <form method="post">
+	   {loop $list $item}
+	    	<tr> 
+	     		<td class="table_cell title"> 
+	      			<div class="goods_info">
+	      			 	<label class="frm_checkbox_label" > 
+	       					<i class="icon_checkbox"></i> 
+	       					<input type="checkbox" name="checkall[]" class="frm_checkbox" value="{$item['id']}" /> 
+	       					{$item['id']}
+	       				</label>
+	      			</div>
+	     		</td>
+	     		<td class="table_cell price tl">
+	    			{$item['wish']['title']}
+	    			<p>
+	    				<a href="{php echo $this->createWebUrl('data',array('wid'=>$item['wish']['id']))}">
+	    					拜年id：{$item['wish']['id']}
+	    				</a>
+	    			</p>
+	     		</td>
+	     		<td class="table_cell price tl">
+	    			{$item['prize']['name']}
+	     		</td>
+	     		<td class="table_cell price tl">
+	    			{$item['code']}
+	     		</td>	     		
+	     		<td class="table_cell price tl">
+	    			{if $item['status'] == 0}
+	    				待发奖
+	    			{elseif $item['status'] == 1}
+	    				已发奖
+	    			{elseif $item['status'] == 2}
+	    				已拒绝	    				
+	    			{/if}
+	     		</td>	     		   		
+			    <td class="table_cell oper last_child tr opclass" style="position: relative;">
+			    	{if $item['status'] == 0 && ( $item['prize']['type'] == 1 || empty( $item['pid'] ) )}
+			    		{if empty($prizerule['taketype'])}
+				       		<li class="drop_down_edit">
+				       			<a href="javascript:;" class="drop_down_editbtn">发奖</a>
+					       		<div class="dropdown_menu_box dropdown_menu dropdown_checkbox has_goods_group" >
+									<div class="dropdown_data_container jsDropdownsList" style="display: none;"> 
+						        		<div class="dropdown_data_list" style=""> 
+						          			<ul class="drop_down_inputitem"> 
+												<li class="">快递名称</li>
+												<li class="">
+													<input type="text" class="drop_down_input" name="name" value="">
+												</li>
+						          			</ul>
+						          			<ul class="drop_down_inputitem"> 
+												<li class="">快递编号</li>
+												<li class="">
+													<input type="text" class="drop_down_input" name="num" value="">
+												</li>
+						          			</ul>						          					          							          			
+						         			<div class="dropdown_tool_bar"> 
+						          				<a href="javascript:;" class="btn js_btn btn_primary confirm_send" id="{$item['id']}" style="padding:0;">确定</a> 
+						          				<a href="javascript:;" class="btn js_btn btn_default dropdown_edit_cancel" style="padding:0;">取消</a> 
+						         			</div> 
+						        		</div> 
+						       		</div>
+					      		</div>
+				       		</li>
+			    		{else}
+			    			<a  href="{php echo $this->createWebUrl('prize',array('op'=>'sendprize','id'=>$item['id']))}" class="edit_listitem" id="{$item['id']}" onclick="return confirm('确定设为已发奖状态吗');">发奖</a>
+			    		{/if}
+			    		<a  href="{php echo $this->createWebUrl('prize',array('op'=>'refuse','id'=>$item['id']))}" class="edit_listitem" id="{$item['id']}" onclick="return confirm('确定设为拒绝发奖状态吗');">拒绝</a>
+			    	{/if}
+			    	{if $item['status'] == 1 && empty($prizerule['taketype'])  && ( $item['prize']['type'] == 1 || empty( $item['pid'] ))}
+			       		<li class="drop_down_edit">
+			       			<a href="javascript:;" class="drop_down_editbtn">修改快递</a>
+				       		<div class="dropdown_menu_box dropdown_menu dropdown_checkbox has_goods_group" >
+								<div class="dropdown_data_container jsDropdownsList" style="display: none;"> 
+					        		<div class="dropdown_data_list" style=""> 
+					          			<ul class="drop_down_inputitem"> 
+											<li class="">快递名称</li>
+											<li class="">
+												<input type="text" class="drop_down_input" name="name" value="{$item['exname']}">
+											</li>
+					          			</ul>
+					          			<ul class="drop_down_inputitem"> 
+											<li class="">快递编号</li>
+											<li class="">
+												<input type="text" class="drop_down_input" name="num" value="{$item['exnum']}">
+											</li>
+					          			</ul>						          					          							          			
+					         			<div class="dropdown_tool_bar"> 
+					          				<a href="javascript:;" class="btn js_btn btn_primary confirm_send" id="{$item['id']}" style="padding:0;">确定</a> 
+					          				<a href="javascript:;" class="btn js_btn btn_default dropdown_edit_cancel" style="padding:0;">取消</a> 
+					         			</div> 
+					        		</div> 
+					       		</div>
+				      		</div>
+			       		</li>
+			    	{/if}
+			    	{if $item['status'] == 2  && $item['prize']['type'] == 1}
+			    		<a  href="{php echo $this->createWebUrl('prize',array('op'=>'recover','id'=>$item['id']))}" class="edit_listitem" id="{$item['id']}" onclick="return confirm('确定设为待发奖状态吗');">恢复待发奖</a>
+			    	{/if}
+			    	<a href="{php echo $this->createWebUrl('prize',array('op'=>'deleteprizelog','id'=>$item['id']))}" onclick="return confirm('删除不能恢复，确定要删除吗？');">删除</a>
+			    </td>
+	    	</tr>
+	    {/loop}
+   	</tbody>
+  	</table>
+	<div class="bottom_page item_cell_box">
+		<div class="dib tl">
+     			<label class="frm_checkbox_label" for="selectAll"> 
+     				<i class="icon_checkbox"></i> 
+     				<span class="lbl_content">全选</span> 
+     				<input type="checkbox" class="frm_checkbox" id="selectAll" /> 
+     			</label>
+  			<div class="filter_content dropdown_topbar"> 
+		   		<div class="dropdown_menu ">
+		    		<a href="javascript:;" class="btn dropdown_switch jsDropdownBt">
+		    			<label class="jsBtLabel">批量操作</label>
+		    			<i class="arrow"></i>
+		    		</a> 
+		    		<div class="dropdown_data_container jsDropdownList" > 
+			     		<ul class="dropdown_data_list"> 
+			      			<li class="dropdown_data_item "> 
+			      				<input name="deleteallprizelog" class="alldeal_btn" value="删除所选" onclick="return confirm('确定要删除选择的吗？');" type="submit">
+			      			</li>			      			
+			    		</ul> 
+		    		</div> 
+		   		</div>
+  			</div>
+		</div>
+		<div class="tr dib item_cell_flex">
+			{$pager}
+		</div>
+	</div>
+		<input name="token" type="hidden" value="{$_W['token']}" />
+	</form>
+{else}
+	<div class="no_data">没有找到数据</div>
+{/if}
+
+	{/if}
+	
+{template '../../../addons/zofui_chickenwish/template/web/common/myfooter'}

@@ -1,0 +1,546 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone = no">
+		<meta name="referrer" content="never">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>{php echo $_GPC['op'] == 'app' ? $settings['title'] : $wish['title'].'给您拜年啦!'}</title>
+		<link rel="stylesheet" href="{php echo MODULE_URL}public/css/swiper-3.3.1.min.css">
+		<link rel="stylesheet" href="{php echo MODULE_URL}public/css/main.css?time={php echo TIMESTAMP}">
+		{php echo Util::register_jssdk();}
+		<script type="text/javascript">
+		   	var settings = {php echo json_encode($settings)};
+		   	var params = {};
+			//此处是封装的rem的算法
+			(function(doc,win){
+			    var docEl = doc.documentElement,resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+			    recalc = function(){
+			        var clientWidth = docEl.clientWidth;
+			        if(!clientWidth) return;
+			        if(clientWidth>=640){
+			            docEl.style.fontSize = '60px'; //1rem  = 100px
+			        }
+			        else{
+			            docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+			        }
+			    };
+			    if (!doc.addEventListener) return;
+			    win.addEventListener(resizeEvt, recalc, false);
+			    doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document,window);
+		</script>
+
+		<script src="{php echo MODULE_URL}public/js/lib/lib.min.js"></script>
+		<script src="{php echo MODULE_URL}public/js/lib/lrz.all.bundle.js"></script>
+		<script src="{php echo MODULE_URL}public/js/lib/jquery.cookie.js"></script>
+		<script src="{php echo MODULE_URL}public/js/lib/spine.js"></script>
+		<script src="{php echo MODULE_URL}public/js/app/tool.js"></script>
+		<script src="{php echo MODULE_URL}public/js/app/ani.js"></script>
+	</head>
+	<style>
+	#registerPanel .btn-submit{background-image:url({php echo MODULE_URL}public/images/btn_sign.png);}.panel .content{background-image:url({php echo MODULE_URL}public/images/panel_bg.png);}.panel .btn-close{background-image:url({php echo MODULE_URL}public/images/close.png);}.guide .stage .word{background-image:url({php echo MODULE_URL}public/images/guide_title.png);}.guide_cover .popup_off{background-image:url({php echo MODULE_URL}public/images/close.png);}.guide_cover .attip_btn a:first-child{background-image:url({php echo MODULE_URL}public/images/btn_xzgz.png);}.guide_cover .attip_btn a:nth-child(2){background-image:url({php echo MODULE_URL}public/images/btn_ygz.png);}
+	</style>
+<body>
+	<div class="wrapper" id="wrapperMain">
+		<main class="main" id="main">
+{if empty( $status )}	
+		<setion class="guide animated slideOutLeft" id="guidePage" style="background-image:url({php echo MODULE_URL}public/images/guide_bg.jpg);">
+			<div class="stage animated bounceInDown" style="background-image:url({php echo MODULE_URL}public/images/guide_stage.png);">
+				<div class="content">
+					<div class="lights-div">
+						<div class="light left">
+							<div class="light1">
+							</div>
+							<div class="light2">
+							</div>
+						</div>
+						<div class="light right">
+							<div class="light1">
+							</div>
+							<div class="light2">
+							</div>
+						</div>
+					</div>
+					<div class="word word1">
+					</div>
+					<div class="word word2">
+					</div>
+					<div class="word word3">
+					</div>
+					<div class="word word4">
+					</div>
+				</div>
+			</div>
+		</setion>
+
+		{if $_GPC['op'] == 'app'}
+
+		<div id="page1" class="page page1 dn" type="page1" style="display: block; background-image: url({php echo MODULE_URL}public/images/500_t5OaheFR3MBdX4O.jpg);">
+			<div class="p1-light">
+			</div>
+			
+			<div class="people animated zoomIn" style="background-image:url({if !empty( $this->module['config']['indexbg'] )  }{php echo $this->module['config']['indexbg']}{else}{php echo MODULE_URL}public/images/p1_people.png{/if});">
+			</div>
+
+			<footer class="foot">
+				<button class="btn btn-intro btn-panel" type-id="introPanel" id="introBtn" style="{if empty($this->module['config']['iszan']) || $this->module['config']['isrank'] == 1}position: absolute;left: -0.2rem;bottom: 0.7rem;{/if}background-image:url({php echo MODULE_URL}public/images/btn_intro.png);"></button>
+				<button class="btn btn-start" id="startBtn" style="background-image:url({php echo MODULE_URL}public/images/btn_start.png);"></button>
+				{if $this->module['config']['iszan'] == 1 && empty($this->module['config']['isrank'])}
+					<button class="btn rank btn-rank"  style="background-image: url({php echo MODULE_URL}public/images/btn_rank.png);"></button>
+				{/if}
+			</footer>
+		</div>
+
+
+		<div id="page2" class="page page2 dn" type="page2" style="display: none;">
+			<button class="btn-return" style="background-image:url({php echo MODULE_URL}public/images/retunrBtn.png);" id="page2Return"></button>
+			<div class="bg">
+				<img class="animated" src="{php echo MODULE_URL}public/images/p2_bg2.jpg" alt="" id="p2Bg" custom="false">
+			</div>
+			<div class="mans">
+				<div class="nickname" style="background-image:url({php echo MODULE_URL}public/images/p2_input.png);">
+					<input type="text" placeholder="输入姓名" maxlength="6">
+				</div>
+				<div class="man man0">
+					<div class="head-img">
+						<img src="" alt=""><button class="head-close"></button>
+					</div>
+					<div class="head">
+						<div class="head-btn">
+							<input class="file head-file" name="upload" type="file" accept="image/*"  index="0">
+						</div>
+					</div>
+					<div class="body">
+					</div>
+				</div>
+				<div class="man man1">
+					<div class="head-img">
+						<img src="" alt=""><button class="head-close"></button>
+					</div>
+					<div class="head">
+						<div class="head-btn">
+							<input class="file head-file" name="upload" type="file" accept="image/*"  index="1">
+						</div>
+					</div>
+					<div class="body">
+					</div>
+				</div>
+				<div class="man man2">
+					<div class="head-img">
+						<img src="" alt=""><button class="head-close"></button>
+					</div>
+					<div class="head">
+						<div class="head-btn">
+							<input class="file head-file" name="upload" type="file" accept="image/*"  index="2">
+						</div>
+					</div>
+					<div class="body">
+					</div>
+				</div>
+			</div>
+			
+			{if empty($this->module['config']['ismusic']) && $this->module['config']['iscusmusic'] == 1}
+				<div class="set_music"></div>
+			{/if}
+
+			<footer class="foot">
+				<button class="btn btn-changebg" id="changebgBtn" index="0" style="background-image:url({php echo MODULE_URL}public/images/btn_changebg.png);"></button>
+				<button class="btn btn-make" id="makeBtn" style="background-image:url({php echo MODULE_URL}public/images/btn_make.png);"></button>
+				<button class="btn btn-custombg" style="background-image:url({php echo MODULE_URL}public/images/btn_custombg.png);"><input id="custombgBtn" class="file bg-file" name="upload" type="file" accept="image/*" index="10"></button>
+			</footer>
+		</div>
+
+		<div class="page pageClip dn" type="pageClip" style="display: none; background-image: url({php echo MODULE_URL}public/images/clip_bg.jpg);">
+			<div class="area">
+				<div class="cliparea" id="photoArea">
+				</div>
+			</div>
+			<footer class="foot">
+				<button class="btn btn-cancel btn-clip-cancel" style="background-image:url({php echo MODULE_URL}public/images/btn_cancel.png);"></button>
+				<button class="btn btn-rotate" onclick="PhotoClip.rotateImage(this.value);" style="background-image:url({php echo MODULE_URL}public/images/btn_rotate.png);"></button>
+				<button class="btn btn-ok" id="btnOk" style="background-image:url({php echo MODULE_URL}public/images/btn_ok.png);"></button>
+			</footer>
+		</div>
+
+		<div class="page pageBgClip dn" type="pageBgClip" style="display: none;">
+			<div class="area">
+				<div class="cliparea" id="photoBgArea">
+				</div>
+			</div>
+			<footer class="foot" id="photoBgFooter">
+				<button class="btn btn-cancel btn-clip-cancel" style="background-image:url({php echo MODULE_URL}public/images/btn_cancel.png);"></button>
+				<button class="btn btn-rotate" onclick="PhotoClip.rotateImage(this.value);" style="background-image:url({php echo MODULE_URL}public/images/btn_rotate.png);"></button>
+				<button class="btn btn-ok" id="btnBgOk" style="background-image:url({php echo MODULE_URL}public/images/btn_ok.png);"></button>
+			</footer>
+		</div>
+
+		{/if}
+		{if $_GPC['op'] == 'share' || $_GPC['op'] == 'self'}
+		<div class="page pageShow dn" type="pageShow" style="display: block;">
+			<div class="showLogo" style="background-image:url();">
+			</div>
+			<div class="lights-div">
+				<div class="light left">
+					<div class="light1">
+					</div>
+					<div class="light2">
+					</div>
+				</div>
+				<div class="light right">
+					<div class="light1">
+					</div>
+					<div class="light2">
+					</div>
+				</div>
+			</div>
+			<div class="title" id="showTitle" style="color: #fff;font-size: 0.31rem;background-image:url({php echo MODULE_URL}public/images/show_title.png);">
+			</div>
+			<div class="showguide" id="showGuide"></div>
+			<canvas id="objCanvas" width="320px" height="400px" style="position:absolute;bottom:1.6rem;width:100%;"></canvas>
+			<footer class="foot">
+				{if $_GPC['op'] == 'self'}
+					{if $this->module['config']['iszan'] == 1}
+						<div class="zan_box my_zan item_cell_box">
+
+							<div class="my_zan_icon 
+								{if $stock > 0 && $prizerule['isprize'] == 1 && $prizerule['getedtype'] == 0 && $prizerule['getedvalue'] > 0 && $wish['zan'] >= $prizerule['getedvalue']}
+									{if empty( $myprize )}
+										getprize
+									{else}
+										getedprize
+									{/if}
+								{/if}
+								{if $end < TIMESTAMP && $prizerule['isprize'] == 1 && $prizerule['getedtype'] == 2 && $prizerule['getmem'] > 0 && ($myrank['rank'] + 1) <= $prizerule['getmem']}
+									{if empty( $myprize )}
+										getprize2
+									{else}
+										getedprize
+									{/if}
+								{/if}">
+							</div>
+
+							<div class="my_zan_num item_cell_flex btn-rank">
+								<div class="my_zan_t">您被赞{$wish['zan']}次</div>
+								<div class="my_zan_t">排第{php echo $myrank['rank'] + 1}名</div>
+							</div>
+						</div>
+					{/if}
+					{if $this->module['config']['iszan'] == 1}
+						<button class="btn btn-intro btn-panel" type-id="introPanel" id="introBtn" style="background-image:url({php echo MODULE_URL}public/images/btn_intro.png);"></button>
+					{/if}
+
+					{if $end > TIMESTAMP}
+						<button class="btn recreate"  style="background-image: url({php echo MODULE_URL}public/images/remakeBtn.png);"></button>
+					{/if}
+					<button class="btn btn-share" onclick="$(&quot;#shareFreind&quot;).fadeIn();" style="background-image:url({php echo MODULE_URL}public/images/btn_share.png);"></button>
+					
+				{/if}
+				{if $_GPC['op'] == 'share'}
+					{if $_W['openid'] == $_GPC['id'] && !empty( $_W['openid'] )}
+						<button class="btn btn_tomy"  style="background-image: url({php echo MODULE_URL}public/images/btn_my.png);"></button>
+					{else}
+						<button class="btn join_wish"  style="background-image: url({php echo MODULE_URL}public/images/btn_return2.png);"></button>
+					{/if}
+					<button class="btn btn-intro btn-panel" type-id="introPanel" id="introBtn" style="background-image:url({php echo MODULE_URL}public/images/btn_intro.png);"></button>
+					{if $this->module['config']['iszan'] == 1}
+					<div class="zan_box" id="zanit">
+						<div class="zan_box_icon"></div>
+						<div class="zan_num">{$wish['zan']}</div>
+					</div>
+					{/if}
+				{/if}
+			</footer>
+		</div>
+		
+		</main>
+		{/if}
+		
+		<section class="panel animated bounceInDown fs-small" id="introPanel" >
+			<main class="">
+				<div class="mask"></div>
+				<div class="content" id="actDetail">
+					<button class="btn-close "></button>
+					<div class="info_head">
+						{if $this->module['config']['iszan'] == 1 && empty($this->module['config']['isrank']) && in_array($_GPC['op'],array('app','self')) }
+							<div class="info_head_info info_act info_item" type="intro"></div>
+							<div class="info_head_rank info_item" type="rank"></div>
+						{/if}
+					</div>
+					
+					<div class="content_in content_in_info" type="intro">
+						<div>
+							
+						<div class="intro_step">活动时间</div>
+						<div>{php echo $this->module['config']['start'].' 至 '.$this->module['config']['end'] }</div>
+
+						{if $prizerule['isprize'] == 1}
+							{if $prizerule['getedtype'] == 0 && $prizerule['getedvalue'] > 0}
+								<div class="intro_step">获奖方式</div>
+								<div>人气值达到{$prizerule['getedvalue']}后，点击领取奖品领奖。奖品数量有限，领奖人数超过奖品库存后不可再领奖。</div>
+								<div class="intro_step">活动奖品</div>
+								<div class="prize_list">
+									{loop $allprize $item}
+									<div class="prize_item item_cell_box">
+										<div class="prize_item_img">
+											<img src="{$item['img']}">
+										</div>
+										<div class="item_cell_flex">
+											<div class="prize_item_name">{$item['name']}</div>
+											<div class="prize_item_stock">剩余:{$item['stock']}</div>
+										</div>
+									</div>
+									{/loop}
+								</div>
+
+							{elseif $prizerule['getedtype'] == 2 && $prizerule['getmem'] > 0}
+								<div class="intro_step">获奖方式</div>
+								<div>活动时间到期后，前{$prizerule['getmem']}名可获奖。</div>
+
+								<div class="intro_step">活动奖品</div>
+								{php echo htmlspecialchars_decode($prizerule['rule'])}
+							{/if}
+						{/if}
+
+						<div class="intro_step">活动说明</div>
+						{php echo htmlspecialchars_decode($explain['content'])}
+
+						</div>
+					</div>
+										
+				</div>
+			</main>
+		</section>
+{/if}
+
+		<section class="panel animated bounceInDown" id="introPanela" {if $status == 1}style="display:block;"{/if}>
+			<!-- <div class="mask"></div> -->
+			<main class=" fs-small">
+				<div class="content" id="actDetail">
+					{if empty( $status )}
+						<button class="btn-close "></button>
+					{/if}
+					<div class="content_in content_sub_in">
+						<img width="100%;" src="{php echo tomedia( $this->module['config']['wxcode'] )}">
+						<div style="text-align: center;font-size: 0.35rem;">{php echo $this->module['config']['subtitle']}</div>
+					</div>
+				</div>
+			</main>
+		</section>
+
+		{if empty($this->module['config']['ismusic']) && $this->module['config']['iscusmusic'] == 1}
+		<section class="panel animated bounceInDown" id="music_box" >
+			<!-- <div class="mask"></div> -->
+			<main class=" fs-small">
+				<div class="content" id="actDetail">
+					<button class="btn-close "></button>
+					<div class="content_in content_music_in">
+						{loop $music $item}
+						<div class="music_item item_cell_box">
+							<div class="music_name item_cell_flex">{$item['name']}</div>
+							<div class="play_mus" url="{$item['url']}" status="0">播放</div>
+							<div class="use_mus {if $wish['music'] == $item['url']}act_mus{/if}" url="{$item['url']}">使用</div>
+						</div>
+						{/loop}
+					</div>
+				</div>
+			</main>
+		</section>
+		{/if}
+
+		<section class="panel animated bounceInDown" id="rankPanel">
+			<main class=" fs-small">
+				<div class="mask"></div>
+				<div class="content" id="rankContent">
+					<button class="btn-close "></button>
+					<header class="panel-title">
+					</header>
+					<div id="rankOtherContent">
+						{if !empty( $wish )}
+		                <div class=" mycontent" id="rankMyContent">
+		                    <div class="rank-li" >
+		                        <div class="ranking c1 dv">{php echo $myrank['rank'] + 1}</div>
+		                        	<img src="{$wish['pic'][1]}" class="headimg dv" />
+		                        <div class="name dv">{$wish['title']}</div>
+		                        <div class="score dv">
+		                            <div class="icon"></div>
+		                            <div class="num c1">{$wish['zan']}</div>
+		                        </div>
+		                    </div>
+		                </div>
+		                {/if}
+		                <div class="rank_list">
+		                	{loop $allrank $k $item}
+			                <div class="rank-li" >
+			                    <div class="ranking c1 dv">{php echo $k+1}</div>
+			                    <img src="{$item['pic'][1]}" class="headimg dv" />
+			                    <div class="name dv">{$item['title']}</div>
+			                    <div class="score dv">
+			                        <div class="icon"></div>
+			                        <div class="num c1">{$item['zan']}</div>
+			                    </div>
+			                </div>
+			                {/loop}
+
+		                </div>
+					</div>
+				</div>
+			</main>
+		</section>
+
+		{if !empty( $allprize )}
+		<!-- 领取奖品 -->
+		<div class="prize_box prize_box_get hide_box">
+			<div class="mask"></div>
+			<div class="prize_box_in">
+				<div class="btn-close"></div>
+				<div class="prize_box_content">
+				{loop $allprize $item}
+					<div class="prize_box_item item_cell_box">
+						<div class="prize_box_img">
+							<img src="{php echo tomedia($item['img'])}">
+						</div>
+						<div class="prize_box_m item_cell_flex">
+							<div>{$item['name']}</div>
+							<div>剩余：{$item['stock']}</div>
+						</div>
+						<div class="prize_box_take">
+							<span class="takeprize" id="{$item['id']}" type="{$item['type']}">领取</span>
+						</div>
+					</div>
+				{/loop}
+
+				</div>
+			</div>
+		</div>
+		{/if}
+
+		{if !empty( $myprize )}
+		<!-- 我的奖品 -->
+		<div class="prize_box hide_box myprize_box">
+			<div class="mask"></div>
+			<div class="prize_box_in">
+				<div class="btn-close "></div>
+				<div class="prize_box_content">
+					{if empty($prizerule['getedtype'])}
+						<div class="prize_box_item item_cell_box">
+							<div class="prize_box_img">
+								<img src="{php echo tomedia($myprize['info']['img'])}">
+							</div>
+							<div class="prize_box_m item_cell_flex">
+								<div>{$myprize['info']['name']}</div>
+							</div>
+						</div>
+					{else}
+						<div class="prize_box_item">
+							奖品说明：{php echo htmlspecialchars_decode($prizerule['rule'])}
+						</div>
+						<div class="prize_box_item">
+							你的名次：{php echo $myrank['rank']+1}
+						</div>						
+					{/if}
+					<div class="prize_box_item">
+						兑奖编码：{$myprize['code']}
+					</div>
+					<div class="prize_box_item">
+						奖品状态：{if empty($myprize['status']) }待发奖{elseif $myprize['status'] == 1}已发奖{elseif $myprize['status'] == 2}已失效{/if}
+					</div>
+					
+						{if empty($myprize['status'])}
+							{if $prizerule['taketype'] == 0}
+								<div class="prize_box_item">请等待发奖</div>
+							{elseif $prizerule['taketype'] == 1}
+								<div class="prize_box_item">领奖提示：{$prizerule['takeinfo']}</div>
+							{elseif $prizerule['taketype'] == 2}
+								<div class="prize_box_item">
+									领奖提示：长按下方二维码联系客服领奖
+									<div class="kefu_qr">
+										<img src="{php echo tomedia( $prizerule['kefuqr'] )}">
+									</div>
+								</div>
+							{/if}
+						{/if}
+						{if $myprize['status'] == 1 && !empty( $myprize['exname'] ) && $prizerule['taketype'] == 0}
+							<div class="prize_box_item">
+								<div>快递名称：{$myprize['exname']}</div>
+								<div>快递编号：{$myprize['exnum']}</div>
+							</div>
+						{/if}
+					</div>
+
+				</div>
+			</div>
+		</div>
+		{/if}		
+
+		<!-- 收货地址 -->
+		<div class="prize_box hide_box subform" >
+			<div class="mask"></div>
+			<div class="prize_box_in">
+				<div class="btn-close "></div>
+				<div class="prize_box_content">
+					
+					<div class="form_item">
+						<input name="name" type="text" placeholder="收件人姓名" name="">
+					</div>
+					<div class="form_item">
+						<input name="tel" type="tel" placeholder="收件人电话" name="">
+					</div>
+					<div class="form_item">
+						<textarea name="add" placeholder="收件人地址"></textarea>
+					</div>
+					<div class="add_confirm">确定</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="page pageMake dn" type="pageMake" style="background-image: url({php echo MODULE_URL}public/images/make_bg.jpg);">
+			<div class="line" id="makeLine">
+				<dt>
+					<div class="bg left"></div>
+					<div class="bg right"></div>
+				</dt>
+				<dd>
+					<div class="bg left"></div>
+					<div class="bg right"></div>
+				</dd>
+			</div>
+			<div class="start make-start" style="background-image:url({php echo MODULE_URL}public/images/make_start.png);"></div>
+		</div>
+
+		<div class="panel-bg" id="panelBg"></div>
+
+		<!-- 统一弹窗 -->
+		<section class="message" id="message" ></section>
+		<div class="message" id="importMessage">
+			<div class="content">
+			</div>
+			<button class="im-btn-close" onclick="Dialog.importMessage.hide()">我知道了</button>
+		</div>
+
+		<!-- 分享朋友圈 -->
+		<div class="share-freind" id="shareFreind">
+			<div class="content" style="background-image:url({php echo MODULE_URL}public/images/12200110_Dxwk.png);">
+			</div>
+		</div>
+	</div>
+
+	<script src="{php echo MODULE_URL}public/js/lib/main.min.js?time={php echo TIMESTAMP}"></script>
+	{if empty($this->module['config']['ismusic']) }
+		<div class="music-btn music-btn-ani" id="musicBtn" style="background-image:url({php echo MODULE_URL}public/images/27145435_KyPF.png)"></div>
+		<audio class="dn" id="bgMusic" src="
+			{if $this->module['config']['iscusmusic'] == 1 && !empty( $wish['music'] )}
+				{$wish['music']}
+			{else}
+				{if empty( $this->module['config']['audio'] )}
+					{php echo MODULE_URL}public/images/500_9wUytfmppLaNQOj.mp3
+				{else}
+					{php echo $this->module['config']['audio']}
+				{/if}
+			{/if}
+		" loop="" autoplay="" preload="" controls=""></audio>
+	{/if}
+</body>
+</html>

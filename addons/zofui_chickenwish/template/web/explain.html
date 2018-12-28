@@ -1,0 +1,21 @@
+{template '../../../addons/'.MODULE.'/template/web/common/myheader'}
+
+		<form method="post" >
+			<div class="frm_control_group">
+				<label for="" class="frm_label"></label>
+				<div class="frm_controls">
+				</div>
+			</div>
+			<div class="frm_control_group textarea_item">
+				<label for="" class="frm_label">活动说明</label>
+				<div class="frm_controls">
+					{php echo tpl_ueditor('content', htmlspecialchars_decode($info['content']));}
+				</div>
+			</div>
+			<div class="tool_bar">
+				<input type="submit" name="create" class="btn btn_primary" value="确定">
+				<input name="token" type="hidden" value="{$_W['token']}" />
+			</div>
+		</form>
+	
+{template '../../../addons/'.MODULE.'/template/web/common/myfooter'}

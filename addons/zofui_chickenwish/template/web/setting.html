@@ -1,0 +1,384 @@
+{template '../../../addons/'.MODULE.'/template/web/common/myheader'}
+<script type="text/javascript" src="../../../addons/{php echo MODULE}/template/web/js/areatocounty.js"></script>
+<script type="text/javascript">
+	$("head").append('<meta name="referrer" content="never">');
+</script>
+<div class="title_tab">
+	<ul class="tab_navs title_tab">
+		<li class="tab_nav js_top selected" showme="select_group"><a href="javascript:;">选填参数</a></li>
+		<li class="tab_nav js_top " showme="basic_group"><a href="javascript:;">必填参数</a></li>
+		<li class="tab_nav js_top " showme="pay_group"><a href="javascript:;">红包参数</a></li>	
+		<li class="tab_nav js_top " showme="share_group"><a href="javascript:;">分享参数</a></li>
+	</ul>
+</div>
+
+<form action="" method="POST">
+	<div class="select_group settings_group">
+		<div class="frm_control_group" >
+			<label for="" class="frm_label">删除缓存</label>
+			<div class="frm_controls">
+				<a class="btn btn_primary deletecache"  type="cache" href="javascript:;">删除缓存</a>
+				<p class="frm_tips tips_width_200">模块重装后必须先删除缓存</p>
+			</div>
+		</div>
+		<div class="frm_control_group" >
+			<label for="" class="frm_label">清空所有数据</label>
+			<div class="frm_controls">
+				<a class="btn btn_primary deletecache"  type="delete" href="javascript:;">清空数据</a>
+				<p class="frm_tips tips_width_200">当需要重新开启活动时，可点击此处清空数据，清空后所有拜年记录和领奖记录被删除</p>
+			</div>
+		</div>		
+		<div class="frm_control_group">
+			<label for="" class="frm_label">页面标题</label>
+			<div class="frm_controls msg">
+				<span class="frm_textarea_box textarea_60px">
+					<textarea  name="title" class="frm_textarea" rows="6" placeholder="">{$settings['title']}</textarea>
+				</span>
+			</div>
+		</div>
+		<div class="frm_control_group single_img_upload">
+			<label for="" class="frm_label">主页背景图片</label>
+			<div class="frm_controls good_images">
+				{php echo  WebCommon::tpl_form_field_image('indexbg',$settings['indexbg'])}
+				<p class="frm_tips">图片尺寸640X1008像素,不设置会使用默认的。</p>
+			</div>
+		</div>
+		<div class="frm_control_group single_img_upload">
+			<label for="" class="frm_label">轮播广告图片</label>
+			<div class="frm_controls good_images">
+				{php echo WebCommon::tpl_form_field_multi_image('advert', $settings['advert'],'');}
+				<p class="frm_tips">图片尺寸640X1008像素,拖拽图片可排序，不设置不会有广告。只有在进入制作页面前才有广告。</p>
+			</div>
+		</div>
+		<div class="frm_control_group single_img_upload">
+			<label for="" class="frm_label">制作时可切换的背景图</label>
+			<div class="frm_controls good_images">
+				{php echo WebCommon::tpl_form_field_multi_image('bgimg', $settings['bgimg'],'');}
+				<p class="frm_tips">图片尺寸640X1008像素,拖拽图片可排序</p>
+			</div>
+		</div>
+		<div class="frm_control_group single_img_upload">
+			<label for="" class="frm_label">左边祝福语</label>
+			<div class="frm_controls good_images">
+				{php echo  WebCommon::tpl_form_field_image('leftzhufu',$settings['leftzhufu'])}
+				<p class="frm_tips">这个是在切换舞蹈后，卡通人物手持的祝福语,图片尺寸254X658像素,不设置会使用默认的。<a target="_blank" href="../addons/zofui_chickenwish/public/images/title2.png">查看默认图</a></p>
+			</div>
+		</div>
+		<div class="frm_control_group single_img_upload">
+			<label for="" class="frm_label">中间祝福语</label>
+			<div class="frm_controls good_images">
+				{php echo  WebCommon::tpl_form_field_image('midzhufu',$settings['midzhufu'])}
+				<p class="frm_tips">图片尺寸254X658像素,不设置会使用默认的。<a target="_blank" href="../addons/zofui_chickenwish/public/images/title1.png">查看默认图</a></p>
+			</div>
+		</div>
+		<div class="frm_control_group single_img_upload">
+			<label for="" class="frm_label">右边祝福语</label>
+			<div class="frm_controls good_images">
+				{php echo  WebCommon::tpl_form_field_image('rightzhufu',$settings['rightzhufu'])}
+				<p class="frm_tips">图片尺寸254X658像素,不设置会使用默认的。<a target="_blank" href="../addons/zofui_chickenwish/public/images/title3.png">查看默认图</a></p>
+			</div>
+		</div>
+
+	</div>
+	<div class="basic_group settings_group">
+		<div class="frm_control_group">
+			<label for="" class="frm_label">活动时间</label>
+			<div class="frm_controls">
+				{php echo tpl_form_field_daterange('rangetime', $settings['rangetime'], true);}
+				<p class="frm_tips">没有到开始时间会员不能参与,超过结束时间会员也不能再参与活动</p>
+			</div>
+		</div>
+		<div class="frm_control_group" >
+  			<label for="" class="frm_label">是否开启点赞</label>
+   			<div class="frm_controls">
+    			<label class="frm_radio_label hide_item" hideitem=".iszan">
+    				<i class="icon_radio"></i>
+    				<span class="lbl_content">关闭</span>
+    				<input type="radio" name="iszan" value="0" class="frm_radio" {if $settings['iszan'] == 0}checked="checked"{/if} />
+    			</label>
+    			<label class="frm_radio_label show_item" showitem=".iszan">
+    				<i class="icon_radio"></i>
+    				<span class="lbl_content">开启</span>
+    				<input type="radio" name="iszan" value="1" class="frm_radio" {if $settings['iszan'] == 1}checked="checked"{/if} /> 
+    			</label>
+   			</div>
+  		</div>
+  		<div class="iszan hideitem" {if $settings['iszan'] == 1}style="display:block"{/if}>
+			<div class="frm_control_group " >
+				<label for="" class="frm_label">点赞次数限制</label>
+				<div class="frm_controls">
+					<span class="frm_input_box">
+						<input type="text" class="frm_input"  name="limitnum" value="{$settings['limitnum']}">
+					</span>
+					<p class="frm_tips">例填1，每位会员最多为一个好友点赞。</p>
+				</div>
+			</div>
+			<div class="frm_control_group " >
+	  			<label for="" class="frm_label">显示点赞榜</label>
+	   			<div class="frm_controls">
+	    			<label class="frm_radio_label show_item" showitem=".isrank">
+	    				<i class="icon_radio"></i>
+	    				<span class="lbl_content">显示</span>
+	    				<input type="radio" name="isrank" value="0" class="frm_radio" {if $settings['isrank'] == 0}checked="checked"{/if} />
+	    			</label>
+	    			<label class="frm_radio_label hide_item" hideitem=".isrank">
+	    				<i class="icon_radio"></i>
+	    				<span class="lbl_content">不显示</span>
+	    				<input type="radio" name="isrank" value="1" class="frm_radio" {if $settings['isrank'] == 1}checked="checked"{/if} /> 
+	    			</label>
+	    			<div class="frm_tips">
+	    				若显示，页面显示人气排行榜按钮。
+	    			</div>
+	   			</div>
+	  		</div>
+			<div class="frm_control_group isrank " {if $settings['isrank'] == 1}style="display:none"{/if}>
+				<label for="" class="frm_label">显示排行数量</label>
+				<div class="frm_controls">
+					<span class="frm_input_box">
+						<input type="text" class="frm_input"  name="ranknum" value="{$settings['ranknum']}">
+					</span>
+					<p class="frm_tips">例填100，排行榜显示100个。</p>
+				</div>
+			</div>
+
+  		</div>	
+
+		<div class="frm_control_group" >
+  			<label for="" class="frm_label">引导参与方式</label>
+   			<div class="frm_controls">
+    			<label class="frm_radio_label show_item" showitem=".jointype">
+    				<i class="icon_radio"></i>
+    				<span class="lbl_content">引导关注参与</span>
+    				<input type="radio" name="jointype" value="0" class="frm_radio" {if $settings['jointype'] == 0}checked="checked"{/if} />
+    			</label>
+    			<label class="frm_radio_label hide_item" hideitem=".jointype">
+    				<i class="icon_radio"></i>
+    				<span class="lbl_content">可直接参与</span>
+    				<input type="radio" name="jointype" value="1" class="frm_radio" {if $settings['jointype'] == 1}checked="checked"{/if} /> 
+    			</label>
+    			<div class="frm_tips">
+    				<p class="font_ff5f27">如果不是认证服务号，而且没有向认证服务号借权，请选择引导关注参与</p> 
+    				<p>如果是引导关注参与，会员点击 我也要制作按钮，弹出公众号二维码。</p>
+    			</div>
+   			</div>
+  		</div>
+		<div class="frm_control_group">
+			<label for="" class="frm_label">引导关注提示</label>
+			<div class="frm_controls">
+				<span class="frm_input_box">
+					<input type="text" class="frm_input"  name="subtitle" value="{$settings['subtitle']}">
+				</span>
+				<p class="frm_tips">这个只有上方设置引导关注参与才有效。例如填：长按以上二维码关注公众号，回复XX即可制作您的拜年动画。</p>
+			</div>
+		</div>
+		<div class="frm_control_group single_img_upload">
+			<label for="" class="frm_label">引导关注公众号二维码</label>
+			<div class="frm_controls good_images">
+				{php echo  WebCommon::tpl_form_field_image('wxcode',$settings['wxcode'])}
+				<p class="frm_tips">设置需要关注的公众号二维码。</p>
+			</div>
+		</div>
+
+		<div class="frm_control_group" >
+  			<label for="" class="frm_label">背景音乐</label>
+   			<div class="frm_controls">
+    			<label class="frm_radio_label show_item" showitem=".ismusic">
+    				<i class="icon_radio"></i>
+    				<span class="lbl_content">开启</span>
+    				<input type="radio" name="ismusic" value="0" class="frm_radio" {if $settings['ismusic'] == 0}checked="checked"{/if} />
+    			</label>
+    			<label class="frm_radio_label hide_item" hideitem=".ismusic">
+    				<i class="icon_radio"></i>
+    				<span class="lbl_content">关闭</span>
+    				<input type="radio" name="ismusic" value="1" class="frm_radio" {if $settings['ismusic'] == 1}checked="checked"{/if} /> 
+    			</label>
+    			<p class="frm_tips">如果开启，请上传一个尺寸较小的音乐文件，建议在500K左右</p>
+   			</div>
+  		</div>
+
+  		<div class="ismusic " {if $settings['ismusic'] == 1}style="display:none"{/if}>
+  			
+			<div class="frm_control_group audio_upload" >
+				<label for="" class="frm_label">背景音乐</label>
+				<div class="frm_controls" style="font-size: 12px!important;">
+					{php echo tpl_form_field_audio('audio',$settings['audio']);}
+					<p class="frm_tips"><a href="javascript:;" id="select_bgimg" >选择音乐</a></p>
+				</div>
+			</div>
+
+			<div class="frm_control_group" >
+	  			<label for="" class="frm_label">允许会员选择音乐</label>
+	   			<div class="frm_controls">
+	    			<label class="frm_radio_label" >
+	    				<i class="icon_radio"></i>
+	    				<span class="lbl_content">不允许</span>
+	    				<input type="radio" name="iscusmusic" value="0" class="frm_radio" {if $settings['iscusmusic'] == 0}checked="checked"{/if} />
+	    			</label>
+	    			<label class="frm_radio_label">
+	    				<i class="icon_radio"></i>
+	    				<span class="lbl_content">允许</span>
+	    				<input type="radio" name="iscusmusic" value="1" class="frm_radio" {if $settings['iscusmusic'] == 1}checked="checked"{/if} /> 
+	    			</label>
+	   			</div>
+	  		</div>
+
+  		</div>
+			
+	</div>
+	<div class="pay_group settings_group">	
+		<div class="frm_control_group" id="js_prize_type"> 
+	  		<label for="" class="frm_label">红包奖品支付方式</label> 
+	   		<div class="frm_controls"> 
+	    		<label class="frm_radio_label" > 
+	    			<i class="icon_radio"></i> 
+	    			<span class="lbl_content">现金红包</span>
+	    			<input type="radio" name="paytype" value="0" class="frm_radio"  {if $settings['paytype'] == 0}checked="checked"{/if} /> 
+	    		</label> 
+	    		<label class="frm_radio_label " >
+	    			<i class="icon_radio"></i>
+	    			<span class="lbl_content">企业付款</span>
+	    			<input type="radio" name="paytype" value="1" class="frm_radio" {if $settings['paytype'] == 1}checked="checked"{/if} /> 
+	    		</label>
+	    		<p class="frm_tips tips_width_200">现金红包发送到公众号聊天框给会员领取（1-200元），企业付款直接支付到会员微信余额中（至少1元）。</p>
+	   		</div>
+	  	</div>
+		<div class="frm_control_group">
+			<label for="" class="frm_label">公众号appId</label>
+			<div class="frm_controls">
+				<span class="frm_input_box">
+					<input type="text" class="frm_input" name="appid" value="{$settings['appid']}">
+				</span>
+				<p class="frm_tips">订阅号填被借权服务号的。</p>
+			</div>
+		</div>
+		<div class="frm_control_group">
+			<label for="" class="frm_label">微信支付商户号</label>
+			<div class="frm_controls">
+				<span class="frm_input_box">
+					<input type="text" class="frm_input" name="mchid" value="{$settings['mchid']}">
+				</span>
+			</div>
+		</div>	
+		<div class="frm_control_group">
+			<label for="" class="frm_label">商户支付密钥</label>
+			<div class="frm_controls">
+				<span class="frm_input_box">
+					<input type="text" class="frm_input" name="apikey" value="{$settings['apikey']}">
+				</span>
+			</div>
+		</div>
+		<div class="frm_control_group">
+			<label for="" class="frm_label">cert证书</label>
+			<div class="frm_controls">
+				<span class="frm_textarea_box">
+					<textarea  name="cert" class="frm_textarea" rows="6" placeholder="为保证安全性, 不显示证书内容. 若要修改, 请直接粘贴"></textarea>
+				</span>
+				<p class="frm_tips">从商户平台上下载支付证书, 解压并取得其中的 apiclient_cert.pem 用记事本打开并复制文件内容, 填至此处</p>
+			</div>
+		</div>
+		<div class="frm_control_group">
+			<label for="" class="frm_label">key证书</label>
+			<div class="frm_controls">
+				<span class="frm_textarea_box">
+					<textarea  name="key" class="frm_textarea" rows="6" placeholder="为保证安全性, 不显示证书内容. 若要修改, 请直接粘贴"></textarea>
+				</span>
+				<p class="frm_tips">从商户平台上下载支付证书, 解压并取得其中的 apiclient_key.pem 用记事本打开并复制文件内容, 填至此处</p>
+			</div>
+		</div>
+		<div class="frm_control_group">
+			<label for="" class="frm_label">rootca证书</label>
+			<div class="frm_controls">
+				<span class="frm_textarea_box">
+					<textarea  name="rootca" class="frm_textarea" rows="6" placeholder="为保证安全性, 不显示证书内容. 若要修改, 请直接粘贴"></textarea>
+				</span>
+				<p class="frm_tips">从商户平台上下载支付证书, 解压并取得其中的 rootca.pem 用记事本打开并复制文件内容, 填至此处</p>
+			</div>
+		</div>
+	</div>
+	<div class="share_group settings_group">
+		<div class="frm_control_group">
+			<label for="" class="frm_label">分享标题</label>
+			<div class="frm_controls">
+				<span class="frm_input_box">
+					<input type="text" class="frm_input" name="sharetitle" value="{$settings['sharetitle']}">
+				</span>
+				<p class="frm_tips">这个是页面分享后的内容。认证服务号可以使用{nick}变量代表分享者微信昵称,{name}代表填写的姓名</p>
+			</div>
+		</div>
+		<div class="frm_control_group">
+			<label for="" class="frm_label">分享描述</label>
+			<div class="frm_controls">
+				<span class="frm_input_box">
+					<input type="text" class="frm_input" name="sharedesc" value="{$settings['sharedesc']}">
+				</span>
+				<p class="frm_tips">认证服务号可以使用{nick}变量代表分享者昵称,{name}代表填写的姓名</p>
+			</div>
+		</div>
+		<div class="frm_control_group" >
+  			<label for="" class="frm_label">分享图片</label>
+   			<div class="frm_controls">
+    			<label class="frm_radio_label show_item" showitem=".sharetype">
+    				<i class="icon_radio"></i>
+    				<span class="lbl_content">自定</span>
+    				<input type="radio" name="sharetype" value="0" class="frm_radio" {if $settings['sharetype'] == 0}checked="checked"{/if} />
+    			</label>
+    			<label class="frm_radio_label hide_item" hideitem=".sharetype">
+    				<i class="icon_radio"></i>
+    				<span class="lbl_content">使用上传的头像</span>
+    				<input type="radio" name="sharetype" value="1" class="frm_radio" {if $settings['sharetype'] == 1}checked="checked"{/if} /> 
+    			</label>
+   			</div>
+  		</div>
+
+		<div class="frm_control_group single_img_upload sharetype" {if $settings['sharetype'] == 1}style="display:none"{/if}>
+			<label for="" class="frm_label">分享图片</label>
+			<div class="frm_controls">
+				{php echo  WebCommon::tpl_form_field_image('shareimg',$settings['shareimg'])}
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="tool_bar">
+		<button type="submit" name="submit" value="123" class="btn btn_primary" >保存</button>
+		<input type="hidden" name="token" value="{$_W['token']}" />
+	</div>
+</form>
+
+	<div class="my_model" music style="display: none">
+	    <div class=" ui-draggable " >
+	        <div class="dialog">
+	            <div class="dialog_hd">
+	                <a href="javascript:;" class="icon16_opr closed pop_closed model_close" >关闭</a>
+	            </div>
+	            <div class="dialog_bd info_box item_cell_box">
+	                <div class="setlink_l">
+	                	<li class="setlink_act">音乐列表</li>
+	                </div>
+	                <div class="setlink_r item_cell_flex">
+	                	{loop $music $k $item}
+                		<div class="setgoods_box item_cell_box">
+	                		<li class="setgoods_title">{$item['name']}{if $k == 23}(本地){/if}</li>
+	                		<li class="setlink_r_box item_cell_flex setgoods_btn">
+	                			<a href="javascript:;" class="play_music" status="0">播放</a>
+	                			<span class="s_music" url="{$item['url']}">选择</span>
+	                		</li>
+                		</div>
+                		{/loop}
+	                </div>
+	            </div>
+				<audio id="bgMusic">
+				    <source  src="" type="audio/mp3">
+				</audio>
+	            <div class="dialog_ft">
+	                <span class="btn btn_default btn_input js_btn_p model_close" >
+	                    <button type="button" class="js_btn">取消</button>
+	                </span>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="mask ui-draggable" style="display: block;"></div>
+	</div>	
+
+{template '../../../addons/'.MODULE.'/template/web/common/myfooter'}

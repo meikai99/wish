@@ -1,0 +1,84 @@
+{template '../../../addons/'.MODULE.'/template/web/common/myheader'}
+	<dl class="intro od_msg">
+
+	<dl class="intro od_msg">
+		<dt><h3>认证订阅号注意事项</h3></dt>
+		<dd>
+			<div class="" style="padding-left: 0px;">
+				<div class="msg_pre_view">
+					<ul>
+						<li class="group item_cell_box address_info">
+							<p class="l  time_title">1、</p>
+							<p class="msg item_cell_flex">
+								必须在模块入口页面设置关键词触发进入活动
+							</p>
+						</li>
+						<li class="group item_cell_box address_info">
+							<p class="l  time_title">2、</p>
+							<p class="msg item_cell_flex">
+								参数设置-必填参数内必须设置引导关注参与活动
+							</p>
+						</li>
+						<li class="group item_cell_box address_info">
+							<p class="l  time_title">3、</p>
+							<p class="msg item_cell_flex">
+								如果要发红包奖品，必须在公众号主页面-参数设置-公众平台oAuth设置, 向发红包的认证服务号借权
+							</p>
+						</li>
+						<li class="group item_cell_box address_info">
+							<p class="l  time_title">4、</p>
+							<p class="msg item_cell_flex">
+								订阅号未向服务号借权的情况下无法使用点赞功能，请在参数设置内关闭
+							</p>
+						</li>
+						<div class="group item_cell_box address_info">
+							<div class="l  time_title">5、</div>
+							<div class="msg item_cell_flex">
+								<div style="padding-bottom: 5px">订阅号向服务号借权使用步骤</div>
+								<div style="padding-bottom: 5px">
+									<img src="{php echo MODULE_URL.'public/images/auth1.png'}" style="width: 100%">
+								</div>
+								<div style="padding-bottom: 5px">
+									<img src="{php echo MODULE_URL.'public/images/auth2.png'}" style="width: 100%">
+								</div>
+							</div>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</dd>
+	</dl>
+
+	<dl class="intro od_msg">
+		<dt><h3>奖品活动注意事项</h3></dt>
+		<dd>
+			<div class="buyer_msg" style="padding-left: 0px;">
+				<div class="msg_pre_view">
+					<ul>
+						<li class="group item_cell_box address_info">
+							<p class="l title time_title">1、</p>
+							<p class="msg item_cell_flex">
+								如果使用奖品功能，必须在参数设置-必填参数内开启点赞功能。然后在奖品管理-奖品规则内开启好奖品的规则。
+							</p>
+						</li>
+						<li class="group item_cell_box address_info">
+							<p class="l title time_title">2、</p>
+							<p class="msg item_cell_flex">
+								如果奖品规则内设置‘点赞值达到某点即获奖 ’，那么需要在奖品管理内添加好奖品。
+
+							</p>
+						</li>
+						<li class="group item_cell_box address_info">
+							<p class="l title time_title">3、</p>
+							<p class="msg item_cell_flex">
+								如果奖品规则内设置‘活动结束后按排名获奖   ’，奖品管理内的奖品是无效的，需要在奖品规则获奖规则内设置好奖品说明。
+							</p>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</dd>
+	</dl>
+</dl>
+{template '../../../addons/'.MODULE.'/template/web/common/myfooter'}

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.we7.cc" versionCode="0.8,1.0">
+	<application setting="true">
+		<name><![CDATA[拜年神器—大头贴拜年]]></name>
+		<identifie><![CDATA[zofui_chickenwish]]></identifie>
+		<version><![CDATA[1.1.5]]></version>
+		<type><![CDATA[activity]]></type>
+		<ability><![CDATA[拜年神器—大头贴拜年]]></ability>
+		<description><![CDATA[拜年神器—大头贴拜年]]></description>
+		<author><![CDATA[淘宝超人源码]]></author>
+		<url><![CDATA[https://www.we7.cc]]></url>
+	</application>
+	<platform>
+		<subscribes>
+		</subscribes>
+		<handles>
+		</handles>
+		<rule embed="false" />
+		<card embed="false" />
+	</platform>
+	<bindings>
+		<cover>
+			<entry title="活动入口" do="index" state="" direct="false" />
+			<entry title="核销奖品" do="hexiao" state="" direct="false" />
+		</cover>
+		<menu>
+			<entry title="拜年记录" do="data" state="" direct="false" />
+		</menu>
+	</bindings>
+	<permissions>
+	</permissions>
+	<install><![CDATA[CREATE TABLE IF NOT EXISTS `ims_zofui_chickenwish_explain` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
+  `content` text,
+  PRIMARY KEY (`id`),
+  KEY `index` (`uniacid`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_zofui_chickenwish_prize` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(255) DEFAULT NULL COMMENT '奖品名称',
+  `stock` int(11) NOT NULL DEFAULT '0' COMMENT '库存',
+  `type` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '0红包 1其他',
+  `img` varchar(255) DEFAULT NULL,
+  `money` decimal(10,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '红包金额',
+  PRIMARY KEY (`id`),
+  KEY `uniacid` (`uniacid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_zofui_chickenwish_prizelog` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
+  `openid` varchar(64) DEFAULT NULL,
+  `pid` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '奖品id',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '0已领取 1已发奖 2拒绝发奖',
+  `code` varchar(32) DEFAULT NULL COMMENT '奖品编码',
+  `exnum` varchar(32) DEFAULT NULL COMMENT '快递编号',
+  `exname` varchar(32) DEFAULT NULL COMMENT '快递名称',
+  `add` varchar(3000) DEFAULT NULL COMMENT '地址信息',
+  PRIMARY KEY (`id`),
+  KEY `uniacid` (`uniacid`),
+  KEY `openid` (`openid`),
+  KEY `pid` (`pid`),
+  KEY `code` (`code`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_zofui_chickenwish_prizerule` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
+  `isprize` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否奖品0关闭 1开启',
+  `getedtype` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '0点赞值达到某点即获奖 1点赞值达到某点后抽奖 2活动结束后按排名获奖',
+  `getedvalue` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '获奖的点赞值',
+  `getmem` int(11) unsigned DEFAULT NULL COMMENT '可获奖的人数',
+  `rule` text COMMENT '获奖规则',
+  `taketype` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '0快递发货 1上店自提 2联系客服',
+  `takeinfo` varchar(1000) DEFAULT NULL COMMENT '上店自提提示内容',
+  `kefuqr` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `uniacid` (`uniacid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_zofui_chickenwish_wish` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
+  `pic` text COMMENT '头像图片',
+  `title` varchar(32) DEFAULT NULL COMMENT '标题',
+  `bgimg` varchar(255) DEFAULT NULL,
+  `time` int(11) unsigned NOT NULL DEFAULT '0',
+  `openid` varchar(64) DEFAULT NULL,
+  `zan` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '赞数量',
+  `music` varchar(500) DEFAULT NULL COMMENT '音乐文件',
+  PRIMARY KEY (`id`),
+  KEY `index` (`uniacid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_zofui_chickenwish_zanlog` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(11) unsigned NOT NULL DEFAULT '0',
+  `openid` varchar(64) DEFAULT NULL COMMENT '点赞人',
+  `wid` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'wish的id',
+  `time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '时间',
+  PRIMARY KEY (`id`),
+  KEY `uniacid` (`uniacid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+]]></install>
+	<uninstall><![CDATA[DROP TABLE IF EXISTS `ims_zofui_chickenwish_explain`;
+DROP TABLE IF EXISTS `ims_zofui_chickenwish_prize`;
+DROP TABLE IF EXISTS `ims_zofui_chickenwish_prizelog`;
+DROP TABLE IF EXISTS `ims_zofui_chickenwish_prizerule`;
+DROP TABLE IF EXISTS `ims_zofui_chickenwish_wish`;
+DROP TABLE IF EXISTS `ims_zofui_chickenwish_zanlog`;
+]]></uninstall>
+	<upgrade><![CDATA[]]></upgrade>
+</manifest>
