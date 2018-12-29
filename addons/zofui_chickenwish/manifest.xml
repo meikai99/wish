@@ -25,6 +25,7 @@
 		</cover>
 		<menu>
 			<entry title="拜年记录" do="data" state="" direct="false" />
+			<entry title="奖品详细" do="prize" state="" direct="false" />
 		</menu>
 	</bindings>
 	<permissions>

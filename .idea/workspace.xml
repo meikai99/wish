@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f5ec4c9-f377-473e-9d3b-cd8a8188cd82" name="Default" comment="" />
+    <list default="true" id="7f5ec4c9-f377-473e-9d3b-cd8a8188cd82" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/zofui_chickenwish/manifest.xml" afterPath="$PROJECT_DIR$/addons/zofui_chickenwish/manifest.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +19,7 @@
       <file leaf-file-name="setting.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/setting.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6498">
+            <state relative-caret-position="3185">
               <caret line="342" column="24" lean-forward="false" selection-start-line="342" selection-start-column="16" selection-end-line="342" selection-end-column="24" />
               <folding />
             </state>
@@ -25,110 +29,111 @@
       <file leaf-file-name="myheader.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/common/myheader.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1982">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-64">
+              <caret line="86" column="31" lean-forward="false" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="explain.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/web/explain.inc.php">
+      <file leaf-file-name="wish.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/public/js/app/wish.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-866">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-877">
+              <caret line="175" column="29" lean-forward="false" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/public/js/lib/main.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5930">
+              <caret line="629" column="1" lean-forward="true" selection-start-line="629" selection-start-column="1" selection-end-line="629" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tool.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/public/js/app/tool.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="194" column="28" lean-forward="true" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
               <folding>
-                <marker date="1545734562342" expanded="true" signature="878:899" ph="..." />
-                <marker date="1545734562342" expanded="true" signature="906:936" ph="..." />
-                <marker date="1545734562342" expanded="true" signature="943:977" ph="..." />
-                <marker date="1545734562342" expanded="true" signature="984:1009" ph="..." />
-                <marker date="1545734562342" expanded="true" signature="1016:1039" ph="..." />
-                <marker date="1545734562342" expanded="true" signature="1046:1079" ph="..." />
-                <marker date="1545734562342" expanded="true" signature="1086:1144" ph="..." />
-                <marker date="1545734562342" expanded="true" signature="1151:1172" ph="..." />
-                <marker date="1545734562342" expanded="true" signature="1179:1200" ph="..." />
+                <marker date="1545734564099" expanded="false" signature="970:1064" ph="..." />
+                <marker date="1545734564099" expanded="true" signature="1065:1278" ph="..." />
+                <marker date="1545734564099" expanded="false" signature="1086:1203" ph="..." />
+                <marker date="1545734564099" expanded="true" signature="1204:1272" ph="..." />
+                <marker date="1545734564099" expanded="false" signature="1532:1639" ph="..." />
+                <marker date="1545734564099" expanded="true" signature="1640:2125" ph="..." />
+                <marker date="1545734564099" expanded="false" signature="1680:1860" ph="..." />
+                <marker date="1545734564099" expanded="true" signature="1861:2113" ph="..." />
+                <marker date="1545734564099" expanded="false" signature="1881:1942" ph="..." />
+                <marker date="1545734564099" expanded="false" signature="1989:2080" ph="..." />
+                <marker date="1545734564099" expanded="true" signature="3423:3736" ph="..." />
+                <marker date="1545734564099" expanded="false" signature="3439:3731" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="module.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/module.php">
+      <file leaf-file-name="autoload.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/class/autoload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="709">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="228">
+              <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/mobile/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4767">
+              <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
               <folding>
-                <marker date="1545734493458" expanded="true" signature="5609:5719" ph="ALTER TABLE ${tablename('zofui_chickenwish_wish')}... " />
+                <element signature="n#style#0;n#button#2;n#footer#0;n#div#4;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global.func.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/function/global.func.php">
+      <file leaf-file-name="Util.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/class/Util.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-140">
-              <caret line="519" column="9" lean-forward="false" selection-start-line="519" selection-start-column="9" selection-end-line="519" selection-end-column="9" />
+            <state relative-caret-position="-1121">
+              <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="34" />
               <folding>
-                <marker date="1544685822000" expanded="true" signature="12874:12881" ph="«" />
-                <marker date="1544685822000" expanded="true" signature="14414:14421" ph="»" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="account.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/class/account/account.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="787" column="20" lean-forward="false" selection-start-line="787" selection-start-column="20" selection-end-line="787" selection-end-column="20" />
-              <folding>
-                <marker date="1544685818000" expanded="true" signature="22394:22495" ph="SELECT modul... " />
-                <marker date="1544685818000" expanded="true" signature="34251:34360" ph="SELECT `fani... ${tablename('mc_mapping_fans')}" />
-                <marker date="1544685818000" expanded="true" signature="40222:40306" ph="SELECT * FRO... ${tablename('core_paylog')}" />
-                <marker date="1544685818000" expanded="true" signature="40995:41099" ph="..." />
-                <marker date="1544685818000" expanded="true" signature="41041:41088" ph="{...}" />
-                <marker date="1544685818000" expanded="true" signature="41378:41429" ph="..." />
+                <marker date="1545734558088" expanded="true" signature="1036:1967" ph="..." />
+                <marker date="1545734558088" expanded="true" signature="1225:1924" ph="[...]" />
+                <marker date="1545734558088" expanded="true" signature="8917:8983" ph="SELECT COUNT... ${tablename($tablename)}" />
+                <marker date="1545734558088" expanded="true" signature="9797:9851" ph="SELECT ${$se... ${tablename($tablename)}" />
+                <marker date="1545734558088" expanded="true" signature="10146:10200" ph="SELECT COUNT... ${tablename($tablename)}" />
+                <marker date="1545734558088" expanded="true" signature="10228:10281" ph="SELECT ${$se... ${tablename($tablename)}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/web/index.inc.php">
+        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/mobile/index.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="316">
+              <caret line="99" column="24" lean-forward="false" selection-start-line="99" selection-start-column="15" selection-end-line="99" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prize.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/web/prize.inc.php">
+      <file leaf-file-name="site.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/site.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1368">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prize.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/prize.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8550">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="190">
+              <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -149,7 +154,35 @@
       <find>BoneCanvas</find>
       <find>js</find>
       <find>tool_bar</find>
+      <find>D</find>
+      <find>DA</find>
+      <find>Da</find>
+      <find>Data</find>
+      <find>Dat</find>
+      <find>web</find>
+      <find>webmen</find>
+      <find>webmenu</find>
+      <find>d</find>
+      <find>frames</find>
+      <find>webMenu</find>
+      <find>buildframes</find>
+      <find>share-freind</find>
+      <find>resetDataForWeixin</find>
+      <find>register_jssdk</find>
+      <find>shareFreind</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/addons/zofui_chickenwish/manifest.xml" />
+        <option value="$PROJECT_DIR$/addons/zofui_chickenwish/public/js/lib/main.min.js" />
+        <option value="$PROJECT_DIR$/addons/zofui_chickenwish/template/mobile/index.html" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -179,6 +212,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -298,11 +333,135 @@
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="we" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="we" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zofui_chickenwish" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="we" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="we" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zofui_chickenwish" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="we" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="we" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zofui_chickenwish" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="we" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="we" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zofui_chickenwish" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="we" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="we" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zofui_chickenwish" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -321,8 +480,16 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+  </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -333,11 +500,12 @@
       <updated>1545751924749</updated>
       <workItem from="1545751931229" duration="3911000" />
       <workItem from="1545833269785" duration="7606000" />
+      <workItem from="1545981642853" duration="14665000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11517000" />
+    <option name="totallyTimeSpent" value="26182000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
@@ -347,7 +515,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -358,7 +527,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -373,30 +541,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/public/js/app/wish.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3325">
-          <caret line="175" column="29" lean-forward="true" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/mobile/index.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/mobile/ajaxdeal.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/public/js/lib/main.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3800">
@@ -436,13 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="180" column="13" lean-forward="true" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/public/js/app/tool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1187">
-          <caret line="64" column="15" lean-forward="true" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -502,70 +639,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/class/Util.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1995">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1545734558088" expanded="true" signature="1036:1967" ph="..." />
-            <marker date="1545734558088" expanded="true" signature="1225:1924" ph="[...]" />
-            <marker date="1545734558088" expanded="true" signature="8917:8983" ph="SELECT COUNT... ${tablename($tablename)}" />
-            <marker date="1545734558088" expanded="true" signature="9797:9851" ph="SELECT ${$se... ${tablename($tablename)}" />
-            <marker date="1545734558088" expanded="true" signature="10146:10200" ph="SELECT COUNT... ${tablename($tablename)}" />
-            <marker date="1545734558088" expanded="true" signature="10228:10281" ph="SELECT ${$se... ${tablename($tablename)}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/mobile/ajaxdeal.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/public/js/app/wish.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="175" column="29" lean-forward="false" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/mobile/index.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2248">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/mobile/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="200" column="24" lean-forward="true" selection-start-line="200" selection-start-column="24" selection-end-line="200" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/public/js/lib/main.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3921">
-          <caret line="373" column="4" lean-forward="false" selection-start-line="373" selection-start-column="4" selection-end-line="373" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/map.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/site.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -581,87 +655,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/manifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1626">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/explain.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/data.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1482">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/web/ajax.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/web/data.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-676">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/web/prize.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1368">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/prize.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8550">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/common/myheader.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1982">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/setting.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6498">
-          <caret line="342" column="24" lean-forward="false" selection-start-line="342" selection-start-column="16" selection-end-line="342" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/web/index.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -671,7 +665,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/web/explain.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-866">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <marker date="1545734562342" expanded="true" signature="878:899" ph="..." />
@@ -689,7 +683,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/framework/function/global.func.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
+        <state relative-caret-position="9861">
           <caret line="519" column="9" lean-forward="false" selection-start-line="519" selection-start-column="9" selection-end-line="519" selection-end-column="9" />
           <folding>
             <marker date="1544685822000" expanded="true" signature="12874:12881" ph="«" />
@@ -698,10 +692,165 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/mobile/hexiao.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/class/model_prize.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/prize.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7980">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/common/myfooter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/common/header-cms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2135">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/class/WebCommon.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding>
+            <marker date="1545734512732" expanded="true" signature="1521:1885" ph="..." />
+            <marker date="1545734512732" expanded="true" signature="1571:1868" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="1653:1857" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="1698:1842" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="2893:3822" ph="..." />
+            <marker date="1545734512732" expanded="true" signature="2944:3637" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="2983:3629" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="3223:3605" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="3243:3464" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="3271:3317" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="3488:3597" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="3516:3557" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="3667:3810" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="3705:3802" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="5012:6026" ph="..." />
+            <marker date="1545734512732" expanded="true" signature="5047:5576" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="5117:5535" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="5154:5528" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="5609:5687" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="5645:5681" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="5718:6014" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="5754:6008" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="5844:6003" ph="{...}" />
+            <marker date="1545734512732" expanded="true" signature="6116:6419" ph="..." />
+            <marker date="1545734512732" expanded="true" signature="6261:6411" ph="..." />
+            <marker date="1545734512732" expanded="true" signature="6572:6871" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/source/site/entry.ctrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/web/prize.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3242">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/manifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-549">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/explain.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/common/common.func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1854">
+          <caret line="113" column="9" lean-forward="false" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
+          <folding>
+            <marker date="1544685872000" expanded="true" signature="1038:1357" ph="..." />
+            <marker date="1544685872000" expanded="true" signature="1177:1348" ph="{...}" />
+            <marker date="1544685872000" expanded="true" signature="24548:24929" ph="..." />
+            <marker date="1544685872000" expanded="true" signature="24578:24917" ph="..." />
+            <marker date="1544685872000" expanded="true" signature="24616:24904" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/common/topbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="6" column="53" lean-forward="true" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/module.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding>
+            <marker date="1545734493458" expanded="true" signature="5609:5719" ph="ALTER TABLE ${tablename('zofui_chickenwish_wish')}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/framework/class/account/account.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="787" column="20" lean-forward="false" selection-start-line="787" selection-start-column="20" selection-end-line="787" selection-end-column="20" />
+        <state relative-caret-position="-312">
+          <caret line="1258" column="15" lean-forward="false" selection-start-line="1258" selection-start-column="15" selection-end-line="1258" selection-end-column="15" />
           <folding>
             <marker date="1544685818000" expanded="true" signature="22394:22495" ph="SELECT modul... " />
             <marker date="1544685818000" expanded="true" signature="34251:34360" ph="SELECT `fani... ${tablename('mc_mapping_fans')}" />
@@ -713,12 +862,165 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/module.php">
+    <entry file="file://$PROJECT_DIR$/framework/model/account.mod.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="-1005">
+          <caret line="130" column="9" lean-forward="false" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
           <folding>
-            <marker date="1545734493458" expanded="true" signature="5609:5719" ph="ALTER TABLE ${tablename('zofui_chickenwish_wish')}... " />
+            <marker date="1544685862000" expanded="true" signature="2916:3140" ph="SELECT w.*, ${tablename('account')}" />
+            <marker date="1544685862000" expanded="true" signature="12362:12436" ph="SELECT * FRO... ${tablename('uni_group')}" />
+            <marker date="1544685862000" expanded="true" signature="15703:15797" ph="SELECT uid F... ${tablename('uni_account_users')}" />
+            <marker date="1544685862000" expanded="true" signature="16252:16324" ph="SELECT * FRO... ${tablename('site_templates')}" />
+            <marker date="1544685862000" expanded="true" signature="16403:16468" ph="SELECT * FRO... ${tablename('site_templates')}" />
+            <marker date="1544685862000" expanded="true" signature="16519:16592" ph="SELECT id, n... ${tablename('users_group')}" />
+            <marker date="1544685862000" expanded="true" signature="16896:16961" ph="SELECT * FRO... ${tablename('site_templates')}" />
+            <marker date="1544685862000" expanded="true" signature="17025:17159" ph="SELECT `temp... ${tablename('uni_group')}" />
+            <marker date="1544685862000" expanded="true" signature="17591:17696" ph="SELECT * FRO... ${tablename('site_templates')}" />
+            <marker date="1544685862000" expanded="true" signature="17782:17861" ph="SELECT * FRO... ${tablename('site_templates')}" />
+            <marker date="1544685862000" expanded="true" signature="19883:20044" ph="SELECT * FRO... ${tablename('uni_account')}" />
+            <marker date="1544685862000" expanded="true" signature="20136:20290" ph="SELECT * FRO... ${tablename('uni_account')}" />
+            <marker date="1544685862000" expanded="true" signature="22270:22467" ph="SELECT * FRO... ${tablename('uni_account_users')}" />
+            <marker date="1544685862000" expanded="true" signature="24946:25092" ph="SELECT COUNT... ${tablename('mc_mapping_fans')}" />
+            <marker date="1544685862000" expanded="true" signature="28975:29069" ph="SELECT uid F... ${tablename('uni_account_users')}" />
+            <marker date="1544685862000" expanded="true" signature="30958:31040" ph="SELECT COUNT... ${tablename('account_wechats')}" />
+            <marker date="1544685862000" expanded="true" signature="31871:31944" ph="SELECT id, m... " />
+            <marker date="1544685862000" expanded="true" signature="32150:32216" ph="SELECT acid ${tablename('account')}" />
+            <marker date="1544685862000" expanded="true" signature="34615:34735" ph="SELECT acid ${tablename('account_wechats')}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/map.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/web/data.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/site.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/setting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3185">
+          <caret line="342" column="24" lean-forward="false" selection-start-line="342" selection-start-column="16" selection-end-line="342" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/class/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/web/common/myheader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-64">
+          <caret line="86" column="31" lean-forward="false" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/public/js/app/wish.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-877">
+          <caret line="175" column="29" lean-forward="false" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/web/index.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="1945" column="1" lean-forward="false" selection-start-line="1945" selection-start-column="1" selection-end-line="1945" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/public/js/lib/main.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5930">
+          <caret line="629" column="1" lean-forward="true" selection-start-line="629" selection-start-column="1" selection-end-line="629" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/public/js/app/tool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="194" column="28" lean-forward="true" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
+          <folding>
+            <marker date="1545734564099" expanded="false" signature="970:1064" ph="..." />
+            <marker date="1545734564099" expanded="true" signature="1065:1278" ph="..." />
+            <marker date="1545734564099" expanded="false" signature="1086:1203" ph="..." />
+            <marker date="1545734564099" expanded="true" signature="1204:1272" ph="..." />
+            <marker date="1545734564099" expanded="false" signature="1532:1639" ph="..." />
+            <marker date="1545734564099" expanded="true" signature="1640:2125" ph="..." />
+            <marker date="1545734564099" expanded="false" signature="1680:1860" ph="..." />
+            <marker date="1545734564099" expanded="true" signature="1861:2113" ph="..." />
+            <marker date="1545734564099" expanded="false" signature="1881:1942" ph="..." />
+            <marker date="1545734564099" expanded="false" signature="1989:2080" ph="..." />
+            <marker date="1545734564099" expanded="true" signature="3423:3736" ph="..." />
+            <marker date="1545734564099" expanded="false" signature="3439:3731" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/class/Util.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1121">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="34" />
+          <folding>
+            <marker date="1545734558088" expanded="true" signature="1036:1967" ph="..." />
+            <marker date="1545734558088" expanded="true" signature="1225:1924" ph="[...]" />
+            <marker date="1545734558088" expanded="true" signature="8917:8983" ph="SELECT COUNT... ${tablename($tablename)}" />
+            <marker date="1545734558088" expanded="true" signature="9797:9851" ph="SELECT ${$se... ${tablename($tablename)}" />
+            <marker date="1545734558088" expanded="true" signature="10146:10200" ph="SELECT COUNT... ${tablename($tablename)}" />
+            <marker date="1545734558088" expanded="true" signature="10228:10281" ph="SELECT ${$se... ${tablename($tablename)}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/inc/mobile/index.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="99" column="24" lean-forward="false" selection-start-line="99" selection-start-column="15" selection-end-line="99" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/zofui_chickenwish/template/mobile/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4767">
+          <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#button#2;n#footer#0;n#div#4;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
